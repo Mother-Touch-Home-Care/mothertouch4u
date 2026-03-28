@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* ── RESET ── */
+        body,
+        table,
+        td,
+        p,
+        a,
+        li,
+        blockquote {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f0f4f0;
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        .wrapper {
+            max-width: 620px;
+            margin: 32px auto;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #40916c;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
+        }
+
+        /* ── HEADER ── */
+        .header {
+            background: linear-gradient(135deg, #1b4332, #40916c);
+            padding: 38px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #ffffff;
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .header p {
+            margin: 7px 0 0;
+            color: rgba(255, 255, 255, 0.72);
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: #d8f3dc;
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-top: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        /* ── BODY ── */
+        .body {
+            padding: 36px 40px;
+        }
+
+        .alert-box {
+            background: #f0fdf4;
+            border-left: 4px solid #40916c;
+            border-radius: 0 8px 8px 0;
+            padding: 14px 18px;
+            margin-bottom: 30px;
+        }
+
+        .alert-box p {
+            margin: 0;
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #1b4332;
+            line-height: 1.65;
+        }
+
+        .alert-box strong {
+            color: #1b4332;
+        }
+
+        .section-label {
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #40916c;
+            font-weight: 600;
+            margin: 0 0 13px;
+        }
+
+        /* ── INFO ITEMS ── */
+        .info-item {
+            background: #f6fdf8;
+            border: 1px solid #d8eedf;
+            border-radius: 10px;
+            padding: 13px 16px;
+            box-sizing: border-box;
+        }
+
+        .info-item .label {
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #52796f;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .info-item .value,
+        .info-item .value a {
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #1a1a2e !important;
+            word-break: break-word;
+            text-transform: none;
+            text-decoration: none;
+        }
+
+
+
+        /* ── CARE BADGE ── */
+        .care-section {
+            margin-bottom: 18px;
+        }
+
+        .care-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #1b4332, #40916c);
+            color: #fff;
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 9px 22px;
+            border-radius: 30px;
+        }
+
+        /* ── MESSAGE ── */
+        .message-box {
+            background: #fafafa;
+            border: 1px solid #e4e4e4;
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-top: 4px;
+            margin-bottom: 28px;
+        }
+
+        .message-box .msg-label {
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #40916c;
+            font-weight: 600;
+            margin: 0 0 10px;
+        }
+
+        .message-box p {
+            margin: 0;
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #444;
+            line-height: 1.75;
+            white-space: pre-line;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #ececec;
+            margin: 0 0 26px;
+        }
+
+        /* ── CTA ── */
+        .cta-wrap {
+            text-align: center;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1b4332, #40916c);
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 14px 36px;
+            border-radius: 30px;
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: #1b4332;
+            padding: 24px 40px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 4px 0;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: 'Google Sans', 'Google Sans Text', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 11px;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.72);
+            text-decoration: none;
+        }
+
+        .footer .auto-note {
+            margin-top: 10px;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* ── MOBILE ── */
+        @media only screen and (max-width: 500px) {
+            .wrapper {
+                margin: 0 !important;
+                border-radius: 0 !important;
+            }
+
+            .header {
+                padding: 28px 20px !important;
+            }
+
+            .body {
+                padding: 24px 16px !important;
+            }
+
+            .footer {
+                padding: 20px 16px !important;
+            }
+
+            .header h1 {
+                font-size: 20px !important;
+            }
+
+            /* Stack two columns vertically */
+            .col-name,
+            .col-phone {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .col-name {
+                padding-bottom: 10px !important;
+            }
+
+            .col-spacer {
+                display: none !important;
+                width: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>Mother Touch Home Care</h1>
+            <p>New Assessment Request Received</p>
+            <div class="badge">Action Required</div>
+        </div>
+
+        <!-- BODY -->
+        <div class="body">
+
+            <div class="alert-box">
+                <p>A new free assessment has been requested by <strong>{{from_name}}</strong>.<br>
+                    Please follow up within a few hours.</p>
+            </div>
+
+            <p class="section-label">Contact Details</p>
+
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                style="margin-bottom:12px;">
+                <tr>
+                    <td class="col-name" valign="top">
+                        <div class="info-item">
+                            <div class="label">Full Name</div>
+                            <div class="value">{{from_name}}</div>
+                        </div>
+                    </td>
+                    <!-- Exact 12px spacer -->
+                    <td class="col-spacer" style="width:12px; min-width:12px;"></td>
+                    <td class="col-phone" valign="top">
+                        <div class="info-item">
+                            <div class="label">Phone Number</div>
+                            <div class="value">{{phone}}</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- ROW 2: Email — full width, separate row -->
+            <div style="margin-bottom:12px;">
+                <div class="info-item">
+                    <div class="label">Email Address</div>
+                    <div class="value">{{from_email}}</div>
+                </div>
+            </div>
+
+            <!-- ROW 3: Location — full width, separate row -->
+            <div style="margin-bottom:22px;">
+                <div class="info-item">
+                    <div class="label">Location</div>
+                    <div class="value">{{location}}</div>
+                </div>
+            </div>
+
+            <p class="section-label">Care Required</p>
+            <div class="care-section">
+                <span class="care-badge">{{care_type}}</span>
+            </div>
+
+            <div class="message-box">
+                <div class="msg-label">Message from Client</div>
+                <p>{{message}}</p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="cta-wrap">
+                <a href="tel:+91{{phone}}" class="cta-btn">Call Back Now</a>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>© 2026 Mother Touch Home Care Kerala</p>
+            <p><a href="mailto:mothertouch4u@gmail.com">mothertouch4u@gmail.com</a></p>
+            <p class="auto-note">This email was auto-generated from your website contact form.</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
