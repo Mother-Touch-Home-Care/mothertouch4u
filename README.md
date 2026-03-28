@@ -81,7 +81,7 @@ The project started from a base design and was significantly extended with addit
 | JavaScript (Vanilla) | Scroll effects, counter animation, IntersectionObserver |
 | Bootstrap 5.3 | Responsive grid, navbar collapse, utility classes |
 | Font Awesome 6.5 | Icons throughout the UI |
-| Google Fonts | Cormorant Garamond (headings) + DM Sans (body) |
+| Google Fonts | Montserrat (headings) + DM Sans (body) |
 | GitHub Pages | Static site hosting |
 
 No build tools, frameworks, or dependencies beyond CDN-loaded libraries. The project runs entirely as static files.
