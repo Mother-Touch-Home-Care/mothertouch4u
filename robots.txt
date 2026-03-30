@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mother-touch-home-care.github.io/mothertouch4u/sitemap.xml
